@@ -1,0 +1,89 @@
+.cart-container {
+    width: 50vw;
+    padding: 10px;
+}
+
+.cart-heading {
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.cart-item {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 3px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.close-cart {
+    font-weight: 600;
+    margin-right: 10px;
+    padding: 10px 7px;
+    background: var(--yellow);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+}
+.close-cart:hover{
+    background: var(--bg);
+    color: var(--yellow);
+    border: 1px solid var(--yellow);
+}
+
+.item-img {
+    width: 16%;
+    margin-right: 20px;
+}
+
+.cart-item img {
+    width: 100%;
+    border: 2px solid var(--yellow);
+}
+
+.item-info {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.item-qty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qty-button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    font-size: 24px;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+}
+
+.qty-button:hover {
+    background: var(--yellow);
+    color: var(--white);
+}
+
+.qty-plus-button {
+    margin-left: 20px;
+}
+
+.empty-cart {
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: large;
+}

@@ -31,7 +31,7 @@ function Cart({ showCart, closeCart, cartItems, onQuantInc, onQuantDec }) {
         {cartItems.length > 0 ? (
           cartItems.map((item) => (
             <CurrentItems
-              key={item.id}
+              key={item.id} 
               id={item.id}
               name={item.name}
               image={item.image}

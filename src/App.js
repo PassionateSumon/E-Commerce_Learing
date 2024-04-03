@@ -3,12 +3,14 @@ import Header from "./components/Header/header";
 import Products from "./components/Products";
 import Cart from "./components/Cart/cart";
 import AddProduct from "./components/AddNewproduct/addProduct";
+import initialProducts from "./Data/products.json";
 
 function App() {
   const [showCart, setShowCart] = useState(false);
   const [showAddProd, setShowAddProd] = useState(false);
   
   const [cartItems, setCartitems] = useState([]);
+  const [allStoreProducts, setAllStoreProducts] = useState(initialProducts);
 
   const openCart = () => setShowCart(true);
   const closeCart = () => setShowCart(false);
@@ -68,10 +70,25 @@ function App() {
     setCartitems(updateQuant);
   };
 
+  const addNewProdductFunc = (newProdName) => {
+    const prod = {
+      id: Products.length+1,
+      name: newProdName,
+      image: "default_product.png",
+    };
+
+    setAllStoreProducts((state) => [...state, prod]);
+    setShowAddProd(false);
+  }
+
   return (
     <div>
-      <Header openCart={openCart} openAddProd={openAddProd} />
+      <Header 
+      openCart={openCart} 
+      openAddProd={openAddProd} 
+      />
       <Products
+        allStoreProducts={allStoreProducts}
         onAddToCart={handleAddToCart}
       />
       <Cart
@@ -84,6 +101,7 @@ function App() {
       <AddProduct
         showAddProd={showAddProd}
         closeAddProd={closeAddProd}
+        onAddProd={addNewProdductFunc}
       />
     </div>
   );

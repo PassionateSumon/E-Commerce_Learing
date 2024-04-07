@@ -1,13 +1,15 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import Modal from "../../UI/modal";
 import "../AddNewproduct/addProduct.css";
+import AppContext from "../../store/app-context";
 
-function AddProduct({ showAddProd, closeAddProd, onAddProd }) {
+function AddProduct() {
+    const {showAddProd, closeAddProd, addNewProdductFunc} = useContext(AppContext);
     const inputRef = useRef();
     function handleAddProduct(event) {
         event.preventDefault();
         const prodName = inputRef.current.value;
-        onAddProd(prodName);
+        addNewProdductFunc(prodName);
     }
     return (
         <Modal show={showAddProd} close={closeAddProd}>
